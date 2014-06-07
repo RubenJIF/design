@@ -40,17 +40,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', end
 
 }
 footer {
-	width : 100%;
-	/*background-color: red;*/
+	width : 101%;
 	position: relative;
 	padding:0px;
 	bottom: 0;
+	left:-7px;
+	text-align: center;
+	background-color: rgba(100,100,10, 0.5);
 }
 footer p {
 	font-family: "icomoon";
+	margin-top: 0px;
+}
+footer span:before {
+	content:"- ";
+}
+footer span:after { 
+	content:" -";
 }
 header h1 {
-	/*border : 2px solid green;*/
 	float : left;
 	padding : .6em;
 	width : 40%;
@@ -184,6 +192,7 @@ nav #search{
 }
 #post figure:hover {
 	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
 	transition : .8s;
 }
 #post #fecha {
@@ -210,6 +219,7 @@ nav #search{
 	width : 60%;
 	display : inline-block;
 	vertical-align: top;
+	color:#1F1E1E;
 	
 }
 
@@ -229,6 +239,32 @@ nav #search{
 	transition : .1s;
 	color:black;
 	cursor : pointer;
+}
+#bottom {
+	margin-top: 7px;
+	/*border : 1px solid blue;*/
+	height : 170px;
+	width:101%;
+	position :relative;
+	left:-7px;
+	background-color: #201F1F;
+	border-radius: 4px 4px 0 0;
+	color:#F1E9E9;
+	margin-bottom: 0px;
+}
+#bottom div {
+	line-height: 1.9em;
+	display : inline-block;
+	width : 30%;
+	margin : 15px;
+}
+#bottom div:nth-child(2) {
+	border-left: 1px dashed rgba(200,180,25, 0.4);
+	border-right: 1px dashed rgba(200,180,25, 0.4);
+}
+#bottom div ul {
+	list-style: none;
+	text-align: center;
 }
 
 .icon-search {

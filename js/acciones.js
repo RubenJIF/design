@@ -9,9 +9,11 @@ $(function(){
 	    $clon.children("#resumen").text($web);
 	    $clon.fadeIn(800);
 	    $clon.prependTo("#posts");
-	    
+		$("#agrega").attr("disabled",true);
+		setTimeout(function(){
+			$("#agrega").attr("disabled",false);
+		},700);
 	});
-
 	$("#quick").click(function(){
 		$("#add").slideToggle("fast");
 	});

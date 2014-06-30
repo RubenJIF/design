@@ -1,0 +1,16 @@
+{
+  "name": "MiniBlog",
+  "version": "0.1.0",
+  "description": "Mini Blog de vía de aprendizaje",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RubenJIF/design.git"
+  },
+  "author": "Rubén James",
+  "bugs": {
+    "url": "https://github.com/RubenJIF/design/issues"
+  },
+  "dependencies": {
+    "socket.io": "~1.0.6"
+  }
+}

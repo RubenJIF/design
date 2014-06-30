@@ -1,14 +1,13 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
+var io  = require('socket.io')();
 
 var server = http.createServer(function(req, res){
 	console.log("Iniciado!");
 	var ruta_archivo = "."+((req.url=='/')?'/home.html':req.url);
 	var extension = path.extname(ruta_archivo);
 	var contentType = 'text/html';
-	console.log(ruta_archivo);
-	console.log(extension);
 	switch(extension){
 		case '.css':
 			contentType = 'text/css';
@@ -26,7 +25,6 @@ var server = http.createServer(function(req, res){
 				}else{
 					res.writeHead(200, {'Content-Type' : contentType});
 					res.write(contenido);
-					console.log(contentType);
 					res.end();
 				}
 			});
@@ -36,4 +34,14 @@ var server = http.createServer(function(req, res){
 		}
 	});
 });
+io.listen(server);
+io.on('connection', function(socket){
+	console.log('Usuario Conectado');
+	socket.emit('responde', 'socket-connection');
+	socket.on('consola', function(data){
+		console.log(data);
+	});
+	io.emit('primero?', "io.emit");
+});
+
 server.listen(9090);

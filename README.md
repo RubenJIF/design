@@ -3,7 +3,7 @@ Design
 Diseñando un Mini Blog, y programando.
 
 <h2>Instalación</h2>
-Ubicarse por consola en el directorio a instalar.
+Ubicarse por consola en el directorio.
 Y teclear lo siguiente:
   <ul>
     <li>npm install</li>

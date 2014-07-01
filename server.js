@@ -35,13 +35,18 @@ var server = http.createServer(function(req, res){
 	});
 });
 io.listen(server);
-io.on('connection', function(socket){
-	console.log('Usuario Conectado');
+io.sockets.on('connection', function(socket){
+	/*console.log('Usuario Conectado');
 	socket.emit('responde', 'socket-connection');
 	socket.on('consola', function(data){
 		console.log(data);
 	});
-	io.emit('primero?', "io.emit");
+	io.sockets.emit('todos', "Hola a todos!!");*/
+	socket.on('pulsado', function(data){
+		console.log(data);
+		socket.broadcast.emit('escribelo', data);
+	});
+
 });
 
 server.listen(9090);

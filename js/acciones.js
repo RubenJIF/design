@@ -1,12 +1,13 @@
 $(function(){
-	
+	var socket = io();
 	$("#agrega").click(function(){
 	    $titulo = $("input[name=titulo]").val();
 	    $web = $("input[name=web]").val();
 	    $clon = $("#post").clone();
 
-	    $clon.children("p").text($titulo);
-	    $clon.children("#resumen").text($web);
+	    var titulo = $clon.children("p").text($titulo);
+	    var texto = $clon.children("#resumen").text($web);
+	    socket.emit('pulsado', "pulsadoo");
 	    $clon.fadeIn(800);
 	    $clon.prependTo("#posts");
 		$("#agrega").attr("disabled",true);
@@ -17,5 +18,8 @@ $(function(){
 	$("#quick").click(function(){
 		$("#add").slideToggle("fast");
 	});
+    socket.on('escribelo', function(datos){
+    	alert(datos);
+    });
 });
 

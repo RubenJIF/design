@@ -7,7 +7,15 @@ $(function(){
 
 	    var titulo = $clon.children("p").text($titulo);
 	    var texto = $clon.children("#resumen").text($web);
-	    socket.emit('pulsado', "pulsadoo");
+	    /*var envio = {'titulo' : titulo,
+	    			'texto' : texto};*/			
+	    var envio = {
+	    	'titulo' : $titulo,
+	    	'texto' : $web
+	    };
+	    socket.emit('pulsado', envio);
+	    //socket.emit('pulsado', "pulsadoo");
+
 	    $clon.fadeIn(800);
 	    $clon.prependTo("#posts");
 		$("#agrega").attr("disabled",true);
@@ -19,7 +27,14 @@ $(function(){
 		$("#add").slideToggle("fast");
 	});
     socket.on('escribelo', function(datos){
-    	alert(datos);
+	    $clon = $("#post").clone();
+    	var titulo2 = $clon.children("p").text(datos.titulo);
+	    var texto2 = $clon.children("#resumen").text(datos.texto);
+	    /*$("body").focus(function(){
+	    	$clon.fadeIn(800);
+	    	console.log("asd");
+	    });*/
+	    $clon.prependTo("#posts");
     });
 });
 

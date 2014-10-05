@@ -2,6 +2,12 @@
   "name": "MiniBlog",
   "version": "0.1.0",
   "description": "Mini Blog de vía de aprendizaje",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/RubenJIF/design.git"
